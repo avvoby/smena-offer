@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Страница не найдена — Яндекс Смена</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg width='32' height='32' viewBox='0 0 134 134' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='46.2188' y='0' width='86.8917' height='87.7464' fill='%236293E8'/><rect x='0' y='87.8438' width='46.4214' height='46.1095' fill='%236293E8'/></svg>">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Onest',sans-serif;background:#0D1525;color:white;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;-webkit-font-smoothing:antialiased}
+.grid{position:fixed;inset:0;background-image:linear-gradient(rgba(99,147,232,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(99,147,232,.05) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.inner{position:relative;z-index:1;max-width:480px}
+.logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:48px}
+.logo-text{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:white}
+.logo-text em{color:#6293E8;font-style:normal}
+.code{font-family:'Unbounded',sans-serif;font-size:80px;font-weight:900;color:#6293E8;line-height:1;margin-bottom:8px;opacity:.25}
+h1{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:800;margin-bottom:12px}
+p{font-size:15px;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:36px}
+.code-box{background:rgba(255,255,255,.04);border:1px solid rgba(99,147,232,.2);border-radius:16px;padding:24px;margin-bottom:24px}
+.code-box p{font-size:13px;margin-bottom:14px;color:rgba(255,255,255,.5)}
+.code-row{display:flex;gap:8px}
+.ci{flex:1;background:rgba(255,255,255,.07);border:1.5px solid rgba(99,147,232,.2);border-radius:10px;padding:12px 16px;font-family:'Unbounded',sans-serif;font-size:14px;font-weight:600;color:white;outline:none;transition:border-color .2s;letter-spacing:.05em}
+.ci:focus{border-color:#6293E8}
+.ci::placeholder{color:rgba(255,255,255,.2);font-weight:400;font-size:13px;letter-spacing:0}
+.cb{background:#6293E8;color:white;border:none;padding:12px 20px;border-radius:10px;font-family:'Onest',sans-serif;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s}
+.cb:hover{background:#4070CC}
+.back{color:rgba(255,255,255,.35);text-decoration:none;font-size:13px;transition:color .2s}
+.back:hover{color:white}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="inner">
+  <div class="logo">
+    <svg width="22" height="22" viewBox="0 0 134 134" fill="none"><rect x="46.2188" y="0" width="86.8917" height="87.7464" fill="#6293E8"/><rect x="0" y="87.8438" width="46.4214" height="46.1095" fill="#6293E8"/></svg>
+    <div class="logo-text"><em>Яндекс Смена</em></div>
+  </div>
+  <div class="code">404</div>
+  <h1>Страница не найдена</h1>
+  <p>Возможно, вы используете неверный код или ссылка устарела. Введите код, который прислал вам менеджер.</p>
+  <div class="code-box">
+    <p>Введите код из предложения менеджера</p>
+    <div class="code-row">
+      <input class="ci" id="ci" type="text" placeholder="Ваш персональный код" autocomplete="off">
+      <button class="cb" onclick="go()">Открыть</button>
+    </div>
+  </div>
+  <a href="/" class="back">← Вернуться на главную</a>
+</div>
+<script>
+document.getElementById('ci').addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+function go(){
+  const c=document.getElementById('ci').value.trim();
+  if(c) window.location.href='/'+c;
+}
+</script>
+</body>
+</html>
